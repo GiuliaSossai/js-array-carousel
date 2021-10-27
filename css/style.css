@@ -58,18 +58,23 @@
   display: block;
 }
 
-.slider-right .item {
+.item2 img {
+  width: 100%;
+  display: block;
+}
+
+.slider-right .item2 {
   height: calc(100% / 5);
   opacity: 0.5;
   background-color: rgb(221, 105, 105);
 }
 
-.slider-right .item img {
+.slider-right .item2 img {
   height: 100%;
   object-fit: cover;
 }
 
-.slider-right .item.active {
+.slider-right .item2.active2 {
   opacity: 1;
   border: 1px solid white;
 }

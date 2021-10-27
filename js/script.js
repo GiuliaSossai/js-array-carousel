@@ -26,12 +26,14 @@ console.log('ciao');
 
 //inizializzo variabile items per ottenere tutti elementi ne html che hanno classe .item - ovvero array/HTML collection
 const images = document.getElementsByClassName('item');
+const images2 = document.getElementsByClassName('item2');
 console.log('items', images);
 
 //creo contatore di default =0
 let contatore = 0;
 console.log('contatore', contatore);
 console.log('items in base al contatore', images[contatore]);
+console.log('items in base al contatore', images2[contatore]);
 
 //inizializzo variabili prev e next, e slider
 const sliderLeft = document.querySelector('.slider-left');
@@ -45,7 +47,9 @@ prev.addEventListener('click', function(){
   //rimuovo classe active
   console.log(images[contatore]);
   images[contatore].classList.remove('active');
+  images2[contatore].classList.remove('active2');
   console.log(images[contatore]);
+  console.log(images2[contatore]);
 
   //torno all'immagine precedente
   contatore = contatore - 1;
@@ -55,14 +59,18 @@ prev.addEventListener('click', function(){
 
   //aggiungo classe active
   images[contatore].classList.add('active');
+  images2[contatore].classList.add('active2');
   console.log(images[contatore]);
+  console.log(images2[contatore]);
 })
 
 next.addEventListener('click', function(){
   //rimuovo classe active
   console.log(images[contatore]);
   images[contatore].classList.remove('active');
+  images2[contatore].classList.remove('active2');
   console.log(images[contatore]);
+  console.log(images2[contatore]);
 
   //torno all'immagine precedente
   contatore = contatore + 1;
@@ -72,5 +80,7 @@ next.addEventListener('click', function(){
 
   //aggiungo classe active
   images[contatore].classList.add('active');
+  images2[contatore].classList.add('active2');
   console.log(images[contatore]);
+  console.log(images2[contatore]);
 })
