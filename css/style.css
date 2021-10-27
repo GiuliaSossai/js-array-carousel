@@ -48,8 +48,13 @@
 
 .slider-right .item {
   height: calc(100% / 5);
+  border: 1px solid black;
   opacity: 0.5;
   background-color: rgb(221, 105, 105);
+}
+
+.slider-right .item img {
+  height: 100%;
 }
 
 .slider-right .item.active {
