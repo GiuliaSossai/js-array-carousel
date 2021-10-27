@@ -56,10 +56,10 @@ for(let i = 0; i < items.length; i++){
   
   //inserisco l'immagine (e anche i testi nella parte dx)
   itemSx.innerHTML = `
-  <img src="${items[contatore]}" alt="">
+  <img src="${items[i]}" alt="">
   <div class="text">
-  <h3>${title[contatore]}</h3>
-  <p>${text[contatore]}</p>
+  <h3>${title[i]}</h3>
+  <p>${text[i]}</p>
   </div>
   `;
 
