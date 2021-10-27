@@ -24,10 +24,7 @@ const text = [
 
 console.log('ciao');
 
-//inizializzo variabile items per ottenere tutti elementi ne html che hanno classe .item - ovvero array/HTML collection
-const images = document.getElementsByClassName('item');
-const images2 = document.getElementsByClassName('item2');
-console.log('items', images);
+
 
 //creo contatore di default =0
 let contatore = 0;
@@ -35,12 +32,9 @@ console.log('contatore', contatore);
 //console.log('items in base al contatore', images[contatore]);
 //console.log('items in base al contatore', images2[contatore]);
 
-//inizializzo variabili prev e next, e slider
+//inizializzo variabili slider
 const sliderLeft = document.querySelector('.slider-left');
 const sliderRight = document.querySelector('.slider-right');
-
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
 
 //ciclo per aggiungere testi nello slider-left
 for(let i = 0; i < items.length; i++){
@@ -62,10 +56,10 @@ for(let i = 0; i < items.length; i++){
   
   //inserisco l'immagine (e anche i testi nella parte dx)
   itemSx.innerHTML = `
-  <img src="${items[i]}" alt="">
+  <img src="${items[contatore]}" alt="">
   <div class="text">
-  <h3>${title[i]}</h3>
-  <p>${text[i]}</p>
+  <h3>${title[contatore]}</h3>
+  <p>${text[contatore]}</p>
   </div>
   `;
 
@@ -81,6 +75,15 @@ for(let i = 0; i < items.length; i++){
   sliderRight.append(itemDx);
 
 };
+
+//inizializzo variabili images e images2 per ottenere tutti elementi ne html che hanno classe .item e .item2 - ovvero array/HTML collection
+const images = document.getElementsByClassName('item');
+const images2 = document.getElementsByClassName('item2');
+console.log('items', images);
+
+//inizializzo variabili prev e next
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
 
 //intercetto funzione click su frecce
 prev.addEventListener('click', function(){
