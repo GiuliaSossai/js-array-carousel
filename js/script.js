@@ -32,15 +32,55 @@ console.log('items', images);
 //creo contatore di default =0
 let contatore = 0;
 console.log('contatore', contatore);
-console.log('items in base al contatore', images[contatore]);
-console.log('items in base al contatore', images2[contatore]);
+//console.log('items in base al contatore', images[contatore]);
+//console.log('items in base al contatore', images2[contatore]);
 
 //inizializzo variabili prev e next, e slider
 const sliderLeft = document.querySelector('.slider-left');
 const sliderRight = document.querySelector('.slider-right');
 
-const prev = document.querySelector('.prev')
-const next = document.querySelector('.next')
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+//ciclo per aggiungere testi nello slider-left
+for(let i = 0; i < items.length; i++){
+
+  console.log(items[i]);
+  // creo un div per ogni immagine, sia sx sia dx
+  const itemSx = document.createElement('div');
+  const itemDx = document.createElement('div');
+
+  //aggiungo la classe item al div a sx e la classe item2 al div a dx
+  itemSx.className = 'item';
+  itemDx.className = 'item2';
+
+  // solo se i è = contatore aggiungo anche active
+  if(i === contatore){
+    itemSx.classList.add('active');
+    itemDx.classList.add('active2');
+  }
+  
+  //inserisco l'immagine (e anche i testi nella parte dx)
+  itemSx.innerHTML = `
+  <img src="${items[i]}" alt="">
+  <div class="text">
+  <h3>${title[i]}</h3>
+  <p>${text[i]}</p>
+  </div>
+  `;
+
+  itemDx.innerHTML = `
+  <img src="${items[i]}" alt="">
+  `;
+
+  console.log(itemSx);
+  console.log(itemDx);
+
+  // append a slider di immagine
+  sliderLeft.append(itemSx);
+  sliderRight.append(itemDx);
+
+};
 
 //intercetto funzione click su frecce
 prev.addEventListener('click', function(){
@@ -62,13 +102,14 @@ prev.addEventListener('click', function(){
   images2[contatore].classList.add('active2');
   console.log(images[contatore]);
   console.log(images2[contatore]);
-})
+});
 
 next.addEventListener('click', function(){
   //rimuovo classe active
   console.log(images[contatore]);
   images[contatore].classList.remove('active');
   images2[contatore].classList.remove('active2');
+  
   console.log(images[contatore]);
   console.log(images2[contatore]);
 
@@ -83,4 +124,4 @@ next.addEventListener('click', function(){
   images2[contatore].classList.add('active2');
   console.log(images[contatore]);
   console.log(images2[contatore]);
-})
+});
