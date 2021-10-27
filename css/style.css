@@ -26,10 +26,18 @@
 
 .slider-left .item {
   display: none;
+  position: relative;
 }
 
 .slider-left .item.active {
   display: block;
+}
+
+.slider-left .item .text {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
 }
 
 .slider-right {
