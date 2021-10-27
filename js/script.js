@@ -1,4 +1,4 @@
-const images = [
+const items = [
   'img/01.jpg',
   'img/02.jpg',
   'img/03.jpg',
@@ -25,13 +25,13 @@ const text = [
 console.log('ciao');
 
 //inizializzo variabile items per ottenere tutti elementi ne html che hanno classe .item - ovvero array/HTML collection
-const items = document.getElementsByClassName('item');
-console.log('items', items);
+const images = document.getElementsByClassName('item');
+console.log('items', images);
 
 //creo contatore di default =0
 let contatore = 0;
 console.log('contatore', contatore);
-console.log('items in base al contatore', items[contatore]);
+console.log('items in base al contatore', images[contatore]);
 
 //inizializzo variabili prev e next, e slider
 const sliderLeft = document.querySelector('.slider-left');
@@ -43,16 +43,34 @@ const next = document.querySelector('.next')
 //intercetto funzione click su frecce
 prev.addEventListener('click', function(){
   //rimuovo classe active
-  items[contatore].classList.remove('active');
-  console.log(items[contatore]);
+  console.log(images[contatore]);
+  images[contatore].classList.remove('active');
+  console.log(images[contatore]);
 
   //torno all'immagine precedente
   contatore = contatore - 1;
   if (contatore < 0 ) {
-    contatore = items.length - 1;
+    contatore = images.length - 1;
   }
 
   //aggiungo classe active
-  items[contatore].classList.add('active');
-  console.log(items[contatore]);
+  images[contatore].classList.add('active');
+  console.log(images[contatore]);
+})
+
+next.addEventListener('click', function(){
+  //rimuovo classe active
+  console.log(images[contatore]);
+  images[contatore].classList.remove('active');
+  console.log(images[contatore]);
+
+  //torno all'immagine precedente
+  contatore = contatore + 1;
+  if (contatore > images.length - 1 ) {
+    contatore = 0;
+  }
+
+  //aggiungo classe active
+  images[contatore].classList.add('active');
+  console.log(images[contatore]);
 })
