@@ -48,7 +48,7 @@ for(let i = 0; i < items.length; i++){
   itemSx.className = 'item';
   itemDx.className = 'item2';
 
-  // solo se i è = contatore aggiungo anche active
+  // solo se i è = contatore aggiungo anche classe active/active2
   if(i === contatore){
     itemSx.classList.add('active');
     itemDx.classList.add('active2');
@@ -58,8 +58,8 @@ for(let i = 0; i < items.length; i++){
   itemSx.innerHTML = `
   <img src="${items[i]}" alt="">
   <div class="text">
-  <h3>${title[i]}</h3>
-  <p>${text[i]}</p>
+    <h3>${title[i]}</h3>
+    <p>${text[i]}</p>
   </div>
   `;
 
@@ -95,7 +95,7 @@ prev.addEventListener('click', function(){
   console.log(images2[contatore]);
 
   //torno all'immagine precedente
-  contatore = contatore - 1;
+  contatore = contatore - 1; //counter --;
   if (contatore < 0 ) {
     contatore = images.length - 1;
   }
@@ -116,8 +116,8 @@ next.addEventListener('click', function(){
   console.log(images[contatore]);
   console.log(images2[contatore]);
 
-  //torno all'immagine precedente
-  contatore = contatore + 1;
+  //vado all'immagine successiva
+  contatore = contatore + 1; //counter ++;
   if (contatore > images.length - 1 ) {
     contatore = 0;
   }
