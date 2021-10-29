@@ -105,6 +105,8 @@ prev.addEventListener('click', function(){
   images2[contatore].classList.add('active2');
   console.log(images[contatore]);
   console.log(images2[contatore]);
+
+  //prevNext('prev');
 });
 
 next.addEventListener('click', function(){
@@ -127,4 +129,28 @@ next.addEventListener('click', function(){
   images2[contatore].classList.add('active2');
   console.log(images[contatore]);
   console.log(images2[contatore]);
+
+  //prevNext('next');
 });
+
+/*
+function prevNext(direzione){
+
+  images[contatore].classList.remove('active');
+  images2[contatore].classList.remove('active2');
+
+  if(direzione === 'prev'){
+    contatore = contatore - 1;
+    if (contatore < 0 ) {
+    contatore = images.length - 1;}
+
+  }else if{ // potrei aggiugnere dopo else if: (direzione === 'next') per essere più chiaro
+    contatore = contatore + 1;
+    if (contatore > images.length - 1 ) {
+    contatore = 0;}
+  }
+
+  images[contatore].classList.add('active');
+  images2[contatore].classList.add('active2');
+
+}*/
